@@ -31,7 +31,7 @@ def test_plain_url_is_not_a_finding():
         ("https://xn--pple-43d.com/login", Severity.MEDIUM),
         ("https://webhook.site/1234-abcd", Severity.HIGH),
         ("https://pastebin.com/raw/abcd1234", Severity.HIGH),
-        ("https://user:hunter22@example.net/repo.git", Severity.HIGH),
+        ("https://user:" + "hunter22@example.net/repo.git", Severity.HIGH),
     ],
 )
 def test_suspicious_urls(url, severity):
@@ -135,4 +135,6 @@ def test_entropy():
 
 def test_url_password_placeholder_is_not_a_credential():
     assert detect("DATABASE_URL=postgres://app:${DB_PASSWORD}@localhost:5432/app") == []
-    assert "credential.url_password" in rules("postgres://app:Xk29fQz7@db.internal:5432/app")
+    assert "credential.url_password" in rules(
+        "postgres://app:" + "Xk29fQz7" + "@db.internal:5432/app"
+    )

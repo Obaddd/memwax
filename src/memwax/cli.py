@@ -38,6 +38,8 @@ def _describe_source(source: dict) -> str:
         return f"git:{source.get('author', '?')}@{source.get('commit', '?')}"
     if kind == "process":
         return f"process:{source.get('declared', '?')}"
+    if kind == "memwax":
+        return f"memwax:{source.get('action', '?')}"
     return "unknown"
 
 

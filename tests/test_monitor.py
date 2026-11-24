@@ -125,3 +125,13 @@ def test_cli_init_watch_and_verify(project, capsys):
 
 def test_watch_requires_init(project, capsys):
     assert main(["--root", str(project), "watch", "--once"]) == 3
+
+
+def test_amber_entries_do_not_confuse_the_monitor(workspace):
+    from memwax.amber import create_baseline
+    from memwax.keys import load_or_create_key
+
+    monitor = Monitor(workspace, use_git=False)
+    monitor.poll_once()
+    create_baseline(workspace, load_or_create_key()[0])
+    assert monitor.poll_once() == []

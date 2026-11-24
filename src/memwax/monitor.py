@@ -18,6 +18,8 @@ from memwax.hashing import sha256_file
 from memwax.provenance import detect_source
 from memwax.workspace import Workspace
 
+FILE_EVENTS = {"tracked", "added", "modified", "removed"}
+
 
 @dataclass(frozen=True)
 class FileState:
@@ -95,6 +97,8 @@ class Monitor:
             return None
         state: dict[str, str] = {}
         for entry in entries:
+            if entry.event not in FILE_EVENTS:
+                continue  # e.g. "amber" entries record baselines, not memory files
             if entry.event == "removed":
                 state.pop(entry.path, None)
             elif entry.sha256:
