@@ -191,3 +191,6 @@ the files themselves, and the two approaches are complementary.
     that exact transcript as a GIF. Nothing in the GIF is staged.
 34. **Install command.** Not published to PyPI (publishing is public and irreversible); the README
     installs from the GitHub repo.
+35. **Pushing without changing global git config.** The push used gh as a credential helper for that
+    one command (`git -c credential...helper='!gh auth git-credential' push`), so the machine's
+    global git settings were not modified.
