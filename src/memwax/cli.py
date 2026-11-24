@@ -8,10 +8,14 @@ import sys
 from pathlib import Path
 
 from memwax import __version__
+from memwax.adapters import ADAPTERS, get_adapter
 from memwax.amber import AmberError, VerifyResult, create_baseline, verify_baseline
 from memwax.changelog import ChangeLog, LogEntry
+from memwax.detectors import Severity
 from memwax.keys import KeyStoreError, encode_public, keys_dir, load_key, load_or_create_key
 from memwax.monitor import Monitor
+from memwax.report import render_html, render_json, render_text, use_color
+from memwax.scanner import Scanner
 from memwax.workspace import Config, Workspace
 
 EXIT_OK = 0
@@ -48,7 +52,8 @@ def _format_entry(entry: LogEntry) -> str:
 # ----- commands ----------------------------------------------------------------
 def cmd_init(args: argparse.Namespace) -> int:
     ws = Workspace(args.root)
-    config = Config()
+    adapter = get_adapter(args.adapter)
+    config = Config(targets=adapter.default_targets(), adapter=args.adapter)
     if args.target:
         config.targets = list(args.target)
     ws.init(config)
@@ -181,6 +186,42 @@ def cmd_key_show(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def cmd_scan(args: argparse.Namespace) -> int:
+    ws = Workspace(args.root)
+    adapter_name = args.adapter or (ws.load_config().adapter if ws.initialized else "generic")
+    try:
+        scanner = Scanner(get_adapter(adapter_name))
+        min_severity = Severity.parse(args.min_severity)
+        fail_on = Severity.parse(args.fail_on)
+    except ValueError as exc:
+        _err(str(exc))
+        return EXIT_USAGE
+    if args.paths:
+        report = scanner.scan_paths([Path(p) for p in args.paths], root=ws.root)
+    else:
+        report = scanner.scan_workspace(ws, use_baseline=not args.no_baseline)
+
+    if args.format == "json":
+        output = render_json(report)
+    elif args.format == "html":
+        output = render_html(report, min_severity=min_severity)
+    else:
+        output = render_text(
+            report, min_severity=min_severity, color=args.output is None and use_color()
+        )
+    if args.output:
+        Path(args.output).write_text(output, encoding="utf-8")
+        _out(f"Report written to {args.output}")
+        if args.format != "text":
+            _out(render_text(report, min_severity=Severity.HIGH).splitlines()[-1])
+    else:
+        sys.stdout.write(output)
+
+    if any(f.detector == "integrity" for f in report.findings):
+        return EXIT_INTEGRITY
+    return EXIT_FINDINGS if report.at_least(fail_on) else EXIT_OK
+
+
 # ----- parser ------------------------------------------------------------------
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -200,7 +241,29 @@ def build_parser() -> argparse.ArgumentParser:
         metavar="GLOB",
         help="glob (relative to root) of memory files to track; repeatable",
     )
+    p_init.add_argument(
+        "--adapter",
+        choices=sorted(ADAPTERS),
+        default="generic",
+        help="memory format; sets default targets (default: generic)",
+    )
     p_init.set_defaults(func=cmd_init)
+
+    p_scan = sub.add_parser("scan", help="scan memory for suspicious content and drift")
+    p_scan.add_argument("paths", nargs="*", help="files/dirs to scan (default: tracked memory)")
+    p_scan.add_argument("--adapter", choices=sorted(ADAPTERS), default=None)
+    p_scan.add_argument("--format", choices=["text", "json", "html"], default="text")
+    p_scan.add_argument("-o", "--output", help="write the report to a file")
+    p_scan.add_argument(
+        "--min-severity", default="low", help="lowest severity to display (default: low)"
+    )
+    p_scan.add_argument(
+        "--fail-on",
+        default="high",
+        help="exit 1 if any finding is at or above this severity (default: high)",
+    )
+    p_scan.add_argument("--no-baseline", action="store_true", help="skip amber/drift checks")
+    p_scan.set_defaults(func=cmd_scan)
 
     p_watch = sub.add_parser("watch", help="record every change to memory files")
     p_watch.add_argument("--interval", type=float, default=2.0, help="seconds between polls")

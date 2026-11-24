@@ -151,3 +151,17 @@ the files themselves, and the two approaches are complementary.
     >=10x = HIGH; shrinking below 20% = MEDIUM; new file = LOW; files under 200 bytes ignored.
 22. **No non-ASCII in Python sources.** Test fixtures with hidden characters use escapes, enforced by
     `tests/test_dogfood.py`, so memwax never ships the characters it warns about.
+23. **Adapters own formats, the core owns nothing format-specific.** `scanner.py`, `report.py` and
+    the detectors only see `Document`/`Finding`; a test fails if they import a specific adapter.
+    Adapters may add format-specific findings and mark documents `hidden_from_render`, a generic
+    flag the core honours by raising severity one level.
+24. **JSON is scanned decoded.** Escaped characters in JSON string values are invisible in the raw
+    file, so the generic adapter scans each decoded string value (path `file.json#/pointer`) plus
+    the raw text once; duplicate findings for the same file/line/rule are merged.
+25. **Claude Code adapter scope.** Project-level files only (CLAUDE.md, CLAUDE.local.md, nested
+    CLAUDE.md, `.claude/**/*.md`, `.claude/settings*.json`, `.mcp.json`). User-level
+    `~/.claude/` is outside the project and not scanned by default. Hidden HTML comments,
+    out-of-project `@imports`, `bypassPermissions` and blanket `Bash(*)` allow rules are reported.
+26. **Report formats.** Text (ANSI colour only on a TTY, honours `NO_COLOR`), JSON (stable keys,
+    ASCII-escaped), and a single static HTML file with no scripts and every value escaped.
+    `--fail-on` (default `high`) sets the exit-1 threshold so the scan can gate CI or a hook.

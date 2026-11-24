@@ -106,11 +106,19 @@ class Detector(Protocol):
 
 
 def excerpt(text: str, start: int, end: int, width: int = 60) -> str:
-    """A short, single-line, printable excerpt around [start, end)."""
-    lo = max(0, start - width // 3)
-    hi = min(len(text), end + width // 3)
+    """A short, single-line, printable excerpt around [start, end).
+
+    Context is clipped to the lines the match touches, so an excerpt never drags in
+    unrelated neighbouring lines.
+    """
+    line_start = text.rfind("\n", 0, start) + 1
+    line_end = text.find("\n", max(end - 1, start))
+    line_end = len(text) if line_end == -1 else line_end
+    lo = max(line_start, start - width // 3)
+    hi = min(line_end, end + width // 3)
+    bounded = lo > line_start, hi < line_end
     snippet = text[lo:hi].replace("\r", " ").replace("\n", " ").replace("\t", " ")
     snippet = "".join(ch if ch.isprintable() else f"<U+{ord(ch):04X}>" for ch in snippet)
     if len(snippet) > width * 2:
         snippet = snippet[: width * 2] + "..."
-    return ("..." if lo > 0 else "") + snippet.strip() + ("..." if hi < len(text) else "")
+    return ("..." if bounded[0] else "") + snippet.strip() + ("..." if bounded[1] else "")
