@@ -8,7 +8,9 @@ import sys
 from pathlib import Path
 
 from memwax import __version__
+from memwax.amber import AmberError, VerifyResult, create_baseline, verify_baseline
 from memwax.changelog import ChangeLog, LogEntry
+from memwax.keys import KeyStoreError, encode_public, keys_dir, load_key, load_or_create_key
 from memwax.monitor import Monitor
 from memwax.workspace import Config, Workspace
 
@@ -106,6 +108,79 @@ def cmd_log_verify(args: argparse.Namespace) -> int:
     return EXIT_INTEGRITY
 
 
+def cmd_amber_create(args: argparse.Namespace) -> int:
+    ws = Workspace(args.root)
+    if not ws.initialized:
+        _err("Not initialized. Run `memwax init` first.")
+        return EXIT_USAGE
+    try:
+        key, created = load_or_create_key()
+    except KeyStoreError as exc:
+        _err(f"Key error: {exc}")
+        return EXIT_USAGE
+    if created:
+        _out(f"Generated a new signing key {key.key_id} in {keys_dir()}")
+        _out("Keep that folder private; it is outside the project on purpose.")
+    baseline = create_baseline(ws, key, note=args.note or "")
+    _out(
+        f"Amber baseline created: {len(baseline.files)} file(s), "
+        f"signed by {key.key_id}, digest {baseline.digest[:16]}"
+    )
+    return EXIT_OK
+
+
+def print_verify(result: VerifyResult) -> None:
+    created = result.baseline.manifest["created_at"] if result.baseline else "?"
+    if result.signature_ok:
+        _out(f"Signature: OK (key {result.signer}), baseline from {created}")
+    else:
+        _out("Signature: FAILED")
+    for problem in result.integrity_problems:
+        _out(f"  INTEGRITY: {problem}")
+    drift = result.drift
+    if drift.clean:
+        _out(f"Drift: none ({drift.unchanged} file(s) unchanged)")
+        return
+    _out(
+        f"Drift: {len(drift.added)} added, {len(drift.changed)} changed, "
+        f"{len(drift.removed)} removed, {drift.unchanged} unchanged"
+    )
+    for rel in drift.added:
+        _out(f"  + {rel}")
+    for rel in drift.changed:
+        _out(f"  ~ {rel}")
+    for rel in drift.removed:
+        _out(f"  - {rel}")
+
+
+def cmd_amber_verify(args: argparse.Namespace) -> int:
+    ws = Workspace(args.root)
+    try:
+        result = verify_baseline(ws, extra_pubkeys=args.pubkey or None)
+    except AmberError as exc:
+        _err(str(exc))
+        return EXIT_USAGE
+    if args.json:
+        _out(json.dumps(result.to_dict(), indent=2))
+    else:
+        print_verify(result)
+    if not result.integrity_ok:
+        return EXIT_INTEGRITY
+    return EXIT_OK if result.drift.clean else EXIT_FINDINGS
+
+
+def cmd_key_show(args: argparse.Namespace) -> int:
+    try:
+        key = load_key()
+    except KeyStoreError as exc:
+        _err(f"{exc}. A key is created automatically by `memwax amber create`.")
+        return EXIT_USAGE
+    _out(f"key id:     {key.key_id}")
+    _out(f"public key: {encode_public(key.public)}")
+    _out(f"location:   {keys_dir()}")
+    return EXIT_OK
+
+
 # ----- parser ------------------------------------------------------------------
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -142,6 +217,24 @@ def build_parser() -> argparse.ArgumentParser:
     p_show.set_defaults(func=cmd_log_show)
     p_verify = log_sub.add_parser("verify", help="check the hash chain")
     p_verify.set_defaults(func=cmd_log_verify)
+
+    p_amber = sub.add_parser("amber", help="signed known-good baselines")
+    amber_sub = p_amber.add_subparsers(dest="amber_command")
+    p_create = amber_sub.add_parser("create", help="snapshot and sign the current state")
+    p_create.add_argument("--note", help="free-text note stored in the baseline")
+    p_create.set_defaults(func=cmd_amber_create)
+    p_averify = amber_sub.add_parser("verify", help="check signature and report drift")
+    p_averify.add_argument("--json", action="store_true")
+    p_averify.add_argument(
+        "--pubkey", action="append", type=Path, help="extra trusted public key file; repeatable"
+    )
+    p_averify.set_defaults(func=cmd_amber_verify)
+
+    p_key = sub.add_parser("key", help="signing key management")
+    key_sub = p_key.add_subparsers(dest="key_command")
+    key_sub.add_parser("show", help="print the public key and key id").set_defaults(
+        func=cmd_key_show
+    )
 
     return parser
 

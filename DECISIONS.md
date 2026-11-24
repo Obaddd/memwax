@@ -116,3 +116,18 @@ the files themselves, and the two approaches are complementary.
    record and sign the log head (seq + hash) to cover that case.
 10. **Default targets.** CLAUDE.md, CLAUDE.local.md, nested CLAUDE.md, `.claude/**/*.md`, AGENTS.md,
     `memory/**`, `.memory/**`. Overridable with `memwax init --target GLOB`.
+11. **Signing.** Ed25519 via `cryptography`. Keys live in `$MEMWAX_HOME` (default `~/.memwax/keys`),
+    never in the project. The private key is PKCS#8 PEM, encrypted only if
+    `MEMWAX_KEY_PASSPHRASE` is set (unencrypted by default so the tool works non-interactively;
+    the README says so). `memwax amber create` generates a key on first use.
+12. **Trust model for verify.** A baseline embeds its public key for information only. Verification
+    uses only locally trusted keys: your own key, `~/.memwax/keys/trusted/*.pub`, and `--pubkey`.
+    Otherwise an attacker could simply re-sign a poisoned baseline with their own key.
+13. **What the signature covers.** The canonical-JSON manifest: per-file sha256/size/line count,
+    creation time, note, change-log head (seq + hash), key id and public key. File content copies go
+    in a content-addressed object store (`.memwax/amber/objects/`) and are re-hashed on every read,
+    so a swapped object is ignored rather than trusted.
+14. **Exit codes.** 0 = clean, 1 = findings/drift, 2 = integrity failure (bad signature, untrusted
+    key, broken or truncated log), 3 = usage error. Lets CI and hooks branch on severity.
+15. **One baseline at a time.** `amber create` replaces the previous baseline; the change log keeps an
+    `amber` entry with each baseline's digest, so the history of baselines is still auditable.
