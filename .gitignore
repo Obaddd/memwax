@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments (the comparison venv for OWASP AMG lives here too)
+.venv/
+.venv-*/
+venv/
+
+# memwax runtime state: logs, baselines, keys. Never commit these from a dev checkout.
+.memwax/
+*.key
+*.pem
+memwax-key*
+
+# Lab run scratch space
+lab/runs/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
