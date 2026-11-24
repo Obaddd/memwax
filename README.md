@@ -28,7 +28,7 @@ Run it yourself: `python demo/demo.py` (and `python demo/render_gif.py` for the 
 ## Install
 
 ```bash
-pip install "git+https://github.com/OWNER/memwax.git"
+pip install "git+https://github.com/Obaddd/memwax.git"
 ```
 
 Python 3.11+. The only runtime dependency is `cryptography`. From a clone:
