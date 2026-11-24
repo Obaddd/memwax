@@ -39,5 +39,5 @@ def environment() -> dict:
 def write_results(name: str, payload: dict) -> Path:
     RESULTS.mkdir(parents=True, exist_ok=True)
     path = RESULTS / f"{name}.json"
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=True) + "\n", "utf-8")
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=True) + "\n", "utf-8", newline="\n")
     return path

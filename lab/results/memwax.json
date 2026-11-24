@@ -15,7 +15,7 @@
       "rules": [
         "instruction.override"
       ],
-      "latency_us": 768.9
+      "latency_us": 980.0
     },
     {
       "file": "attack/direct/direct-02.md",
@@ -26,7 +26,7 @@
         "instruction.exfiltration",
         "url.suspicious"
       ],
-      "latency_us": 624.8
+      "latency_us": 849.3
     },
     {
       "file": "attack/direct/direct-03.md",
@@ -36,7 +36,7 @@
       "rules": [
         "instruction.authority"
       ],
-      "latency_us": 486.8
+      "latency_us": 466.6
     },
     {
       "file": "attack/direct/direct-04.md",
@@ -46,7 +46,7 @@
       "rules": [
         "instruction.role"
       ],
-      "latency_us": 681.9
+      "latency_us": 838.4
     },
     {
       "file": "attack/direct/direct-05.md",
@@ -56,7 +56,7 @@
       "rules": [
         "shell.pipe_to_shell"
       ],
-      "latency_us": 478.1
+      "latency_us": 490.5
     },
     {
       "file": "attack/direct/direct-06.md",
@@ -66,7 +66,7 @@
       "rules": [
         "instruction.secrecy"
       ],
-      "latency_us": 592.7
+      "latency_us": 528.7
     },
     {
       "file": "attack/direct/direct-07.md",
@@ -76,7 +76,7 @@
       "rules": [
         "shell.persistence"
       ],
-      "latency_us": 772.4
+      "latency_us": 667.1
     },
     {
       "file": "attack/direct/direct-08.md",
@@ -86,7 +86,7 @@
       "rules": [
         "instruction.relax"
       ],
-      "latency_us": 478.9
+      "latency_us": 1996.1
     },
     {
       "file": "attack/direct/direct-09.md",
@@ -96,7 +96,7 @@
       "rules": [
         "shell.reverse_shell"
       ],
-      "latency_us": 398.3
+      "latency_us": 388.2
     },
     {
       "file": "attack/direct/direct-10.md",
@@ -104,7 +104,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 705.4
+      "latency_us": 585.7
     },
     {
       "file": "attack/direct/direct-11.md",
@@ -112,7 +112,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 605.3
+      "latency_us": 403.8
     },
     {
       "file": "attack/direct/direct-12.md",
@@ -120,7 +120,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 470.7
+      "latency_us": 373.0
     },
     {
       "file": "attack/direct/direct-13.md",
@@ -130,7 +130,7 @@
       "rules": [
         "instruction.authority"
       ],
-      "latency_us": 635.2
+      "latency_us": 542.0
     },
     {
       "file": "attack/direct/direct-14.md",
@@ -138,7 +138,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 494.1
+      "latency_us": 577.4
     },
     {
       "file": "attack/direct/direct-15.md",
@@ -148,7 +148,7 @@
       "rules": [
         "shell.encoded"
       ],
-      "latency_us": 542.8
+      "latency_us": 772.9
     },
     {
       "file": "attack/direct/direct-16.md",
@@ -158,7 +158,7 @@
       "rules": [
         "instruction.relax"
       ],
-      "latency_us": 595.6
+      "latency_us": 569.3
     },
     {
       "file": "attack/delayed/delayed-01.md",
@@ -169,7 +169,7 @@
         "instruction.trigger",
         "shell.pipe_to_shell"
       ],
-      "latency_us": 587.9
+      "latency_us": 517.7
     },
     {
       "file": "attack/delayed/delayed-02.md",
@@ -180,7 +180,7 @@
         "instruction.trigger",
         "url.suspicious"
       ],
-      "latency_us": 615.0
+      "latency_us": 479.7
     },
     {
       "file": "attack/delayed/delayed-03.md",
@@ -192,7 +192,7 @@
         "instruction.persistence",
         "instruction.secrecy"
       ],
-      "latency_us": 783.2
+      "latency_us": 493.8
     },
     {
       "file": "attack/delayed/delayed-04.md",
@@ -202,7 +202,7 @@
       "rules": [
         "instruction.trigger"
       ],
-      "latency_us": 460.5
+      "latency_us": 423.1
     },
     {
       "file": "attack/delayed/delayed-05.md",
@@ -214,7 +214,7 @@
         "instruction.exfiltration",
         "instruction.persistence"
       ],
-      "latency_us": 573.4
+      "latency_us": 574.3
     },
     {
       "file": "attack/delayed/delayed-06.md",
@@ -222,7 +222,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 621.5
+      "latency_us": 538.5
     },
     {
       "file": "attack/delayed/delayed-07.md",
@@ -234,7 +234,7 @@
         "instruction.persistence",
         "instruction.trigger"
       ],
-      "latency_us": 642.7
+      "latency_us": 963.6
     },
     {
       "file": "attack/delayed/delayed-08.md",
@@ -242,7 +242,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 432.0
+      "latency_us": 420.5
     },
     {
       "file": "attack/delayed/delayed-09.md",
@@ -255,7 +255,7 @@
         "instruction.secrecy",
         "shell.pipe_to_shell"
       ],
-      "latency_us": 656.8
+      "latency_us": 695.5
     },
     {
       "file": "attack/delayed/delayed-10.md",
@@ -263,7 +263,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 609.0
+      "latency_us": 486.4
     },
     {
       "file": "attack/delayed/delayed-11.md",
@@ -271,7 +271,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 767.1
+      "latency_us": 516.5
     },
     {
       "file": "attack/delayed/delayed-12.md",
@@ -282,7 +282,7 @@
         "instruction.trigger",
         "url.suspicious"
       ],
-      "latency_us": 611.3
+      "latency_us": 600.8
     },
     {
       "file": "attack/delayed/delayed-13.md",
@@ -292,7 +292,7 @@
       "rules": [
         "instruction.persistence"
       ],
-      "latency_us": 506.5
+      "latency_us": 460.1
     },
     {
       "file": "attack/delayed/delayed-14.md",
@@ -302,7 +302,7 @@
       "rules": [
         "instruction.relax"
       ],
-      "latency_us": 551.5
+      "latency_us": 419.1
     },
     {
       "file": "attack/delayed/delayed-15.md",
@@ -310,7 +310,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 749.1
+      "latency_us": 590.9
     },
     {
       "file": "attack/delayed/delayed-16.md",
@@ -320,7 +320,7 @@
       "rules": [
         "instruction.trigger"
       ],
-      "latency_us": 608.1
+      "latency_us": 502.3
     },
     {
       "file": "attack/hidden/hidden-01.md",
@@ -330,7 +330,7 @@
       "rules": [
         "hidden.tag_chars"
       ],
-      "latency_us": 415.1
+      "latency_us": 307.3
     },
     {
       "file": "attack/hidden/hidden-02.md",
@@ -341,7 +341,7 @@
         "hidden.zero_width",
         "instruction.override"
       ],
-      "latency_us": 526.5
+      "latency_us": 459.6
     },
     {
       "file": "attack/hidden/hidden-03.md",
@@ -351,7 +351,7 @@
       "rules": [
         "hidden.bidi"
       ],
-      "latency_us": 403.8
+      "latency_us": 319.9
     },
     {
       "file": "attack/hidden/hidden-04.md",
@@ -362,7 +362,7 @@
         "hidden.homoglyph",
         "instruction.override"
       ],
-      "latency_us": 650.0
+      "latency_us": 353.9
     },
     {
       "file": "attack/hidden/hidden-05.md",
@@ -372,7 +372,7 @@
       "rules": [
         "hidden.tag_chars"
       ],
-      "latency_us": 574.1
+      "latency_us": 379.1
     },
     {
       "file": "attack/hidden/hidden-06.md",
@@ -383,7 +383,7 @@
         "hidden.zero_width",
         "shell.pipe_to_shell"
       ],
-      "latency_us": 390.3
+      "latency_us": 711.4
     },
     {
       "file": "attack/hidden/hidden-07.md",
@@ -393,7 +393,7 @@
       "rules": [
         "hidden.homoglyph"
       ],
-      "latency_us": 507.6
+      "latency_us": 697.2
     },
     {
       "file": "attack/hidden/hidden-08.md",
@@ -403,7 +403,7 @@
       "rules": [
         "hidden.bidi"
       ],
-      "latency_us": 503.1
+      "latency_us": 496.0
     },
     {
       "file": "attack/hidden/hidden-09.md",
@@ -416,7 +416,7 @@
         "instruction.persistence",
         "instruction.secrecy"
       ],
-      "latency_us": 495.5
+      "latency_us": 566.8
     },
     {
       "file": "attack/hidden/hidden-10.md",
@@ -427,7 +427,7 @@
         "hidden.zero_width",
         "instruction.override"
       ],
-      "latency_us": 413.3
+      "latency_us": 337.2
     },
     {
       "file": "attack/hidden/hidden-11.md",
@@ -438,7 +438,7 @@
         "hidden.homoglyph",
         "instruction.secrecy"
       ],
-      "latency_us": 499.1
+      "latency_us": 400.7
     },
     {
       "file": "attack/hidden/hidden-12.md",
@@ -448,7 +448,7 @@
       "rules": [
         "hidden.tag_chars"
       ],
-      "latency_us": 429.7
+      "latency_us": 344.9
     },
     {
       "file": "attack/hidden/hidden-13.md",
@@ -458,7 +458,7 @@
       "rules": [
         "hidden.zero_width"
       ],
-      "latency_us": 564.9
+      "latency_us": 690.6
     },
     {
       "file": "attack/hidden/hidden-14.md",
@@ -468,7 +468,7 @@
       "rules": [
         "hidden.homoglyph"
       ],
-      "latency_us": 594.3
+      "latency_us": 441.9
     },
     {
       "file": "attack/hidden/hidden-15.md",
@@ -478,7 +478,7 @@
       "rules": [
         "hidden.zero_width"
       ],
-      "latency_us": 329.8
+      "latency_us": 369.2
     },
     {
       "file": "attack/hidden/hidden-16.md",
@@ -488,7 +488,7 @@
       "rules": [
         "hidden.zero_width"
       ],
-      "latency_us": 328.4
+      "latency_us": 282.8
     },
     {
       "file": "attack/in_document/doc-01.md",
@@ -496,7 +496,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 964.9
+      "latency_us": 733.9
     },
     {
       "file": "attack/in_document/doc-02.md",
@@ -507,7 +507,7 @@
         "shell.pipe_to_shell",
         "url.suspicious"
       ],
-      "latency_us": 709.1
+      "latency_us": 730.8
     },
     {
       "file": "attack/in_document/doc-03.md",
@@ -519,7 +519,7 @@
         "instruction.exfiltration",
         "instruction.persistence"
       ],
-      "latency_us": 714.0
+      "latency_us": 693.5
     },
     {
       "file": "attack/in_document/doc-04.md",
@@ -531,7 +531,7 @@
         "instruction.combo",
         "instruction.relax"
       ],
-      "latency_us": 934.4
+      "latency_us": 630.4
     },
     {
       "file": "attack/in_document/doc-05.md",
@@ -541,7 +541,7 @@
       "rules": [
         "instruction.override"
       ],
-      "latency_us": 716.9
+      "latency_us": 602.3
     },
     {
       "file": "attack/in_document/doc-06.md",
@@ -551,7 +551,7 @@
       "rules": [
         "instruction.relax"
       ],
-      "latency_us": 707.5
+      "latency_us": 682.8
     },
     {
       "file": "attack/in_document/doc-07.md",
@@ -565,7 +565,7 @@
         "instruction.override",
         "instruction.role"
       ],
-      "latency_us": 841.1
+      "latency_us": 685.6
     },
     {
       "file": "attack/in_document/doc-08.md",
@@ -575,7 +575,7 @@
       "rules": [
         "instruction.role"
       ],
-      "latency_us": 545.8
+      "latency_us": 511.8
     },
     {
       "file": "attack/in_document/doc-09.md",
@@ -583,7 +583,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 694.6
+      "latency_us": 550.3
     },
     {
       "file": "attack/in_document/doc-10.md",
@@ -593,7 +593,7 @@
       "rules": [
         "instruction.authority"
       ],
-      "latency_us": 838.3
+      "latency_us": 718.2
     },
     {
       "file": "attack/in_document/doc-11.md",
@@ -605,7 +605,7 @@
         "instruction.exfiltration",
         "instruction.secrecy"
       ],
-      "latency_us": 647.3
+      "latency_us": 577.5
     },
     {
       "file": "attack/in_document/doc-12.md",
@@ -615,7 +615,7 @@
       "rules": [
         "instruction.override"
       ],
-      "latency_us": 533.9
+      "latency_us": 535.6
     },
     {
       "file": "attack/in_document/doc-13.md",
@@ -623,7 +623,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 624.2
+      "latency_us": 557.9
     },
     {
       "file": "attack/in_document/doc-14.md",
@@ -631,7 +631,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 686.4
+      "latency_us": 610.9
     },
     {
       "file": "attack/in_document/doc-15.md",
@@ -639,7 +639,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 659.6
+      "latency_us": 533.7
     },
     {
       "file": "attack/in_document/doc-16.md",
@@ -649,7 +649,7 @@
       "rules": [
         "url.suspicious"
       ],
-      "latency_us": 584.0
+      "latency_us": 1226.3
     },
     {
       "file": "benign/benign-01.md",
@@ -657,7 +657,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 713.2
+      "latency_us": 626.8
     },
     {
       "file": "benign/benign-02.md",
@@ -665,7 +665,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 550.6
+      "latency_us": 539.9
     },
     {
       "file": "benign/benign-03.md",
@@ -673,7 +673,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 524.0
+      "latency_us": 576.1
     },
     {
       "file": "benign/benign-04.md",
@@ -681,7 +681,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 624.0
+      "latency_us": 656.6
     },
     {
       "file": "benign/benign-05.md",
@@ -689,7 +689,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 551.7
+      "latency_us": 583.0
     },
     {
       "file": "benign/benign-06.md",
@@ -699,7 +699,7 @@
       "rules": [
         "instruction.persistence"
       ],
-      "latency_us": 524.1
+      "latency_us": 623.2
     },
     {
       "file": "benign/benign-07.md",
@@ -711,7 +711,7 @@
         "instruction.override",
         "instruction.role"
       ],
-      "latency_us": 609.9
+      "latency_us": 587.7
     },
     {
       "file": "benign/benign-08.md",
@@ -721,7 +721,7 @@
       "rules": [
         "shell.pipe_to_shell"
       ],
-      "latency_us": 509.2
+      "latency_us": 490.0
     },
     {
       "file": "benign/benign-09.md",
@@ -731,7 +731,7 @@
       "rules": [
         "url.suspicious"
       ],
-      "latency_us": 661.6
+      "latency_us": 529.7
     },
     {
       "file": "benign/benign-10.md",
@@ -741,7 +741,7 @@
       "rules": [
         "url.suspicious"
       ],
-      "latency_us": 702.0
+      "latency_us": 544.0
     },
     {
       "file": "benign/benign-11.json",
@@ -749,7 +749,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 533.0
+      "latency_us": 4481.6
     },
     {
       "file": "benign/benign-12.md",
@@ -757,7 +757,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 452.6
+      "latency_us": 445.0
     },
     {
       "file": "benign/benign-13.md",
@@ -765,7 +765,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 495.0
+      "latency_us": 453.2
     },
     {
       "file": "benign/benign-14.md",
@@ -773,7 +773,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 303.2
+      "latency_us": 274.3
     },
     {
       "file": "benign/benign-15.md",
@@ -781,7 +781,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 634.4
+      "latency_us": 778.5
     },
     {
       "file": "benign/benign-16.md",
@@ -789,7 +789,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 432.6
+      "latency_us": 409.6
     },
     {
       "file": "benign/benign-17.md",
@@ -797,7 +797,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 434.1
+      "latency_us": 428.5
     },
     {
       "file": "benign/benign-18.md",
@@ -805,7 +805,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 490.6
+      "latency_us": 438.4
     },
     {
       "file": "benign/benign-19.md",
@@ -815,7 +815,7 @@
       "rules": [
         "instruction.trigger"
       ],
-      "latency_us": 424.2
+      "latency_us": 436.6
     },
     {
       "file": "benign/benign-20.md",
@@ -823,7 +823,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 397.1
+      "latency_us": 404.2
     },
     {
       "file": "benign/benign-21.md",
@@ -831,7 +831,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 332.5
+      "latency_us": 449.7
     },
     {
       "file": "benign/benign-22.md",
@@ -839,7 +839,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 405.8
+      "latency_us": 1615.3
     },
     {
       "file": "benign/benign-23.md",
@@ -847,7 +847,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 396.6
+      "latency_us": 807.7
     },
     {
       "file": "benign/benign-24.md",
@@ -855,7 +855,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 425.5
+      "latency_us": 596.6
     },
     {
       "file": "benign/benign-25.md",
@@ -867,7 +867,7 @@
         "shell.pipe_to_shell",
         "url.suspicious"
       ],
-      "latency_us": 690.5
+      "latency_us": 976.6
     },
     {
       "file": "benign/benign-26.md",
@@ -877,7 +877,7 @@
       "rules": [
         "instruction.trigger"
       ],
-      "latency_us": 391.2
+      "latency_us": 392.7
     },
     {
       "file": "benign/benign-27.jsonl",
@@ -885,7 +885,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 975.5
+      "latency_us": 1017.5
     },
     {
       "file": "benign/benign-28.md",
@@ -893,7 +893,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 391.0
+      "latency_us": 253.6
     },
     {
       "file": "benign/benign-29.md",
@@ -901,7 +901,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 334.1
+      "latency_us": 338.7
     },
     {
       "file": "benign/benign-30.md",
@@ -909,7 +909,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 445.3
+      "latency_us": 451.5
     },
     {
       "file": "benign/benign-31.md",
@@ -917,7 +917,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 577.6
+      "latency_us": 554.6
     },
     {
       "file": "benign/benign-32.md",
@@ -925,7 +925,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 412.5
+      "latency_us": 421.4
     },
     {
       "file": "hosts/host-0.md",
@@ -933,7 +933,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 244.7
+      "latency_us": 253.3
     },
     {
       "file": "hosts/host-1.md",
@@ -941,7 +941,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 172.4
+      "latency_us": 170.6
     },
     {
       "file": "hosts/host-2.md",
@@ -949,7 +949,7 @@
       "max_severity": null,
       "max_severity_level": -1,
       "rules": [],
-      "latency_us": 157.2
+      "latency_us": 169.2
     }
   ]
 }

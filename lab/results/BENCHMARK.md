@@ -12,11 +12,11 @@ A sample counts as *detected* if the tool flags the file. For memwax that means 
 
 | Tool / config | Detection rate | False positive rate | Host templates flagged | Median latency per file |
 |---|---|---|---|---|
-| memwax (>= medium) | 76.6% (49/64) | 21.9% (7/32) | 0/3 | 552 us |
-| memwax (>= high) | 57.8% (37/64) | 9.4% (3/32) | 0/3 | 552 us |
-| AMG scan() | 6.2% (4/64) | 3.1% (1/32) | 0/3 | 64 us |
-| AMG strict | 6.2% (4/64) | 3.1% (1/32) | 0/3 | 102 us |
-| AMG hardened | 6.2% (4/64) | 3.1% (1/32) | 0/3 | 106 us |
+| memwax (>= medium) | 76.6% (49/64) | 21.9% (7/32) | 0/3 | 536 us |
+| memwax (>= high) | 57.8% (37/64) | 9.4% (3/32) | 0/3 | 536 us |
+| AMG scan() | 6.2% (4/64) | 3.1% (1/32) | 0/3 | 70 us |
+| AMG strict | 6.2% (4/64) | 3.1% (1/32) | 0/3 | 109 us |
+| AMG hardened | 6.2% (4/64) | 3.1% (1/32) | 0/3 | 117 us |
 
 ## Detection rate by category
 

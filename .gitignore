@@ -29,3 +29,6 @@ lab/runs/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Demo scratch project
+demo/workdir/

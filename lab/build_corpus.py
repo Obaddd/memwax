@@ -116,8 +116,12 @@ def build() -> dict:
     hosts_dir = SAMPLES / "hosts"
     hosts_dir.mkdir(parents=True, exist_ok=True)
     for index, host in enumerate(HOSTS):
-        (hosts_dir / f"host-{index}.md").write_text(host.replace("{PAYLOAD}\n", ""), "utf-8")
-    (SAMPLES / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", "utf-8")
+        (hosts_dir / f"host-{index}.md").write_text(
+            host.replace("{PAYLOAD}\n", ""), "utf-8", newline="\n"
+        )
+    (SAMPLES / "manifest.json").write_text(
+        json.dumps(manifest, indent=2) + "\n", "utf-8", newline="\n"
+    )
     return manifest
 
 

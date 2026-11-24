@@ -200,8 +200,10 @@ def main() -> int:
         lines.append(f"| `{item['id']}` | {label} | " + " | ".join(marks) + " |")
     lines.append("")
 
-    (RESULTS / "BENCHMARK.md").write_text("\n".join(lines), "utf-8")
-    (RESULTS / "summary.json").write_text(json.dumps({"meta": meta, "tools": summary}, indent=2))
+    (RESULTS / "BENCHMARK.md").write_text("\n".join(lines), "utf-8", newline="\n")
+    (RESULTS / "summary.json").write_text(
+        json.dumps({"meta": meta, "tools": summary}, indent=2) + "\n", "utf-8", newline="\n"
+    )
     for tool in tools:
         s = summary[tool]
         print(

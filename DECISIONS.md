@@ -180,3 +180,14 @@ the files themselves, and the two approaches are complementary.
 30. **Inert corpus.** Attacker infrastructure uses `.example` and RFC 5737 IPs. A homoglyph sample
     originally pointed at a look-alike of a real brand's `.com` domain (which someone could own);
     it was changed to `.example`. `tests/test_lab.py` checks every attack URL host.
+31. **CI.** GitHub Actions on push and PR, Linux + Windows, Python 3.11 and 3.13. Actions pinned to
+    full commit SHAs (checkout v7.0.1, setup-python v7.1.0, resolved through the GitHub API),
+    `permissions: contents: read`, `persist-credentials: false`. CI also runs the secret scan.
+32. **Secret scan.** `scripts/secret_scan.py` reuses memwax's credential rules on every file git
+    would push, plus key-file names, machine-specific home paths, and email addresses. Test
+    fixtures build token-shaped strings at runtime so no token-like literal is committed.
+33. **Demo.** `demo/demo.py` runs real commands on a throwaway project (with `MEMWAX_HOME` inside
+    it) and saves the transcript; `demo/render_gif.py` (Pillow, optional `demo` extra) replays
+    that exact transcript as a GIF. Nothing in the GIF is staged.
+34. **Install command.** Not published to PyPI (publishing is public and irreversible); the README
+    installs from the GitHub repo.
