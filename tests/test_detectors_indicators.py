@@ -131,3 +131,8 @@ def test_placeholders_are_not_credentials(line):
 def test_entropy():
     assert shannon_entropy("aaaa") == 0
     assert shannon_entropy("abcd") == 2
+
+
+def test_url_password_placeholder_is_not_a_credential():
+    assert detect("DATABASE_URL=postgres://app:${DB_PASSWORD}@localhost:5432/app") == []
+    assert "credential.url_password" in rules("postgres://app:Xk29fQz7@db.internal:5432/app")

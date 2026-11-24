@@ -1,0 +1,959 @@
+{
+  "tool": "memwax",
+  "version": "0.1.0",
+  "config": "generic adapter, default detectors, no baseline",
+  "environment": {
+    "python": "3.13.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "rows": [
+    {
+      "file": "attack/direct/direct-01.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.override"
+      ],
+      "latency_us": 1595.0
+    },
+    {
+      "file": "attack/direct/direct-02.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.exfiltration",
+        "url.suspicious"
+      ],
+      "latency_us": 668.4
+    },
+    {
+      "file": "attack/direct/direct-03.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.authority"
+      ],
+      "latency_us": 439.2
+    },
+    {
+      "file": "attack/direct/direct-04.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.role"
+      ],
+      "latency_us": 1665.6
+    },
+    {
+      "file": "attack/direct/direct-05.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "shell.pipe_to_shell"
+      ],
+      "latency_us": 644.2
+    },
+    {
+      "file": "attack/direct/direct-06.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.secrecy"
+      ],
+      "latency_us": 601.6
+    },
+    {
+      "file": "attack/direct/direct-07.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "shell.persistence"
+      ],
+      "latency_us": 1473.4
+    },
+    {
+      "file": "attack/direct/direct-08.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.relax"
+      ],
+      "latency_us": 549.4
+    },
+    {
+      "file": "attack/direct/direct-09.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "shell.reverse_shell"
+      ],
+      "latency_us": 558.9
+    },
+    {
+      "file": "attack/direct/direct-10.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 638.1
+    },
+    {
+      "file": "attack/direct/direct-11.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 565.7
+    },
+    {
+      "file": "attack/direct/direct-12.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 413.6
+    },
+    {
+      "file": "attack/direct/direct-13.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.authority"
+      ],
+      "latency_us": 616.8
+    },
+    {
+      "file": "attack/direct/direct-14.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 519.1
+    },
+    {
+      "file": "attack/direct/direct-15.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "shell.encoded"
+      ],
+      "latency_us": 481.1
+    },
+    {
+      "file": "attack/direct/direct-16.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.relax"
+      ],
+      "latency_us": 689.3
+    },
+    {
+      "file": "attack/delayed/delayed-01.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.trigger",
+        "shell.pipe_to_shell"
+      ],
+      "latency_us": 907.7
+    },
+    {
+      "file": "attack/delayed/delayed-02.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.trigger",
+        "url.suspicious"
+      ],
+      "latency_us": 544.4
+    },
+    {
+      "file": "attack/delayed/delayed-03.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.combo",
+        "instruction.persistence",
+        "instruction.secrecy"
+      ],
+      "latency_us": 506.3
+    },
+    {
+      "file": "attack/delayed/delayed-04.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.trigger"
+      ],
+      "latency_us": 472.3
+    },
+    {
+      "file": "attack/delayed/delayed-05.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.combo",
+        "instruction.exfiltration",
+        "instruction.persistence"
+      ],
+      "latency_us": 965.6
+    },
+    {
+      "file": "attack/delayed/delayed-06.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 567.5
+    },
+    {
+      "file": "attack/delayed/delayed-07.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.combo",
+        "instruction.persistence",
+        "instruction.trigger"
+      ],
+      "latency_us": 637.1
+    },
+    {
+      "file": "attack/delayed/delayed-08.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 438.8
+    },
+    {
+      "file": "attack/delayed/delayed-09.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.combo",
+        "instruction.persistence",
+        "instruction.secrecy",
+        "shell.pipe_to_shell"
+      ],
+      "latency_us": 903.5
+    },
+    {
+      "file": "attack/delayed/delayed-10.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 814.6
+    },
+    {
+      "file": "attack/delayed/delayed-11.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 598.7
+    },
+    {
+      "file": "attack/delayed/delayed-12.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.trigger",
+        "url.suspicious"
+      ],
+      "latency_us": 686.9
+    },
+    {
+      "file": "attack/delayed/delayed-13.md",
+      "label": "attack",
+      "max_severity": "low",
+      "max_severity_level": 1,
+      "rules": [
+        "instruction.persistence"
+      ],
+      "latency_us": 557.5
+    },
+    {
+      "file": "attack/delayed/delayed-14.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.relax"
+      ],
+      "latency_us": 460.1
+    },
+    {
+      "file": "attack/delayed/delayed-15.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 698.6
+    },
+    {
+      "file": "attack/delayed/delayed-16.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.trigger"
+      ],
+      "latency_us": 587.5
+    },
+    {
+      "file": "attack/hidden/hidden-01.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "hidden.tag_chars"
+      ],
+      "latency_us": 292.9
+    },
+    {
+      "file": "attack/hidden/hidden-02.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "hidden.zero_width",
+        "instruction.override"
+      ],
+      "latency_us": 579.9
+    },
+    {
+      "file": "attack/hidden/hidden-03.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "hidden.bidi"
+      ],
+      "latency_us": 391.3
+    },
+    {
+      "file": "attack/hidden/hidden-04.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "hidden.homoglyph",
+        "instruction.override"
+      ],
+      "latency_us": 428.0
+    },
+    {
+      "file": "attack/hidden/hidden-05.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "hidden.tag_chars"
+      ],
+      "latency_us": 747.7
+    },
+    {
+      "file": "attack/hidden/hidden-06.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "hidden.zero_width",
+        "shell.pipe_to_shell"
+      ],
+      "latency_us": 394.9
+    },
+    {
+      "file": "attack/hidden/hidden-07.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "hidden.homoglyph"
+      ],
+      "latency_us": 477.0
+    },
+    {
+      "file": "attack/hidden/hidden-08.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "hidden.bidi"
+      ],
+      "latency_us": 550.3
+    },
+    {
+      "file": "attack/hidden/hidden-09.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "hidden.zero_width",
+        "instruction.combo",
+        "instruction.persistence",
+        "instruction.secrecy"
+      ],
+      "latency_us": 491.5
+    },
+    {
+      "file": "attack/hidden/hidden-10.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "hidden.zero_width",
+        "instruction.override"
+      ],
+      "latency_us": 419.9
+    },
+    {
+      "file": "attack/hidden/hidden-11.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "hidden.homoglyph",
+        "instruction.secrecy"
+      ],
+      "latency_us": 539.7
+    },
+    {
+      "file": "attack/hidden/hidden-12.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "hidden.tag_chars"
+      ],
+      "latency_us": 364.3
+    },
+    {
+      "file": "attack/hidden/hidden-13.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "hidden.zero_width"
+      ],
+      "latency_us": 442.6
+    },
+    {
+      "file": "attack/hidden/hidden-14.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "hidden.homoglyph"
+      ],
+      "latency_us": 623.9
+    },
+    {
+      "file": "attack/hidden/hidden-15.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "hidden.zero_width"
+      ],
+      "latency_us": 343.0
+    },
+    {
+      "file": "attack/hidden/hidden-16.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "hidden.zero_width"
+      ],
+      "latency_us": 283.1
+    },
+    {
+      "file": "attack/in_document/doc-01.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 883.9
+    },
+    {
+      "file": "attack/in_document/doc-02.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "shell.pipe_to_shell",
+        "url.suspicious"
+      ],
+      "latency_us": 839.3
+    },
+    {
+      "file": "attack/in_document/doc-03.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.combo",
+        "instruction.exfiltration",
+        "instruction.persistence"
+      ],
+      "latency_us": 1350.4
+    },
+    {
+      "file": "attack/in_document/doc-04.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.authority",
+        "instruction.combo",
+        "instruction.relax"
+      ],
+      "latency_us": 674.1
+    },
+    {
+      "file": "attack/in_document/doc-05.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.override"
+      ],
+      "latency_us": 706.2
+    },
+    {
+      "file": "attack/in_document/doc-06.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.relax"
+      ],
+      "latency_us": 976.3
+    },
+    {
+      "file": "attack/in_document/doc-07.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.authority",
+        "instruction.combo",
+        "instruction.exfiltration",
+        "instruction.override",
+        "instruction.role"
+      ],
+      "latency_us": 742.1
+    },
+    {
+      "file": "attack/in_document/doc-08.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.role"
+      ],
+      "latency_us": 647.4
+    },
+    {
+      "file": "attack/in_document/doc-09.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 672.5
+    },
+    {
+      "file": "attack/in_document/doc-10.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.authority"
+      ],
+      "latency_us": 1171.2
+    },
+    {
+      "file": "attack/in_document/doc-11.md",
+      "label": "attack",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.combo",
+        "instruction.exfiltration",
+        "instruction.secrecy"
+      ],
+      "latency_us": 573.7
+    },
+    {
+      "file": "attack/in_document/doc-12.md",
+      "label": "attack",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "instruction.override"
+      ],
+      "latency_us": 568.6
+    },
+    {
+      "file": "attack/in_document/doc-13.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 1057.1
+    },
+    {
+      "file": "attack/in_document/doc-14.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 662.1
+    },
+    {
+      "file": "attack/in_document/doc-15.md",
+      "label": "attack",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 619.3
+    },
+    {
+      "file": "attack/in_document/doc-16.md",
+      "label": "attack",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "url.suspicious"
+      ],
+      "latency_us": 517.9
+    },
+    {
+      "file": "benign/benign-01.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 648.6
+    },
+    {
+      "file": "benign/benign-02.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 556.6
+    },
+    {
+      "file": "benign/benign-03.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 601.7
+    },
+    {
+      "file": "benign/benign-04.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 633.3
+    },
+    {
+      "file": "benign/benign-05.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 535.4
+    },
+    {
+      "file": "benign/benign-06.md",
+      "label": "benign",
+      "max_severity": "low",
+      "max_severity_level": 1,
+      "rules": [
+        "instruction.persistence"
+      ],
+      "latency_us": 503.9
+    },
+    {
+      "file": "benign/benign-07.md",
+      "label": "benign",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.combo",
+        "instruction.override",
+        "instruction.role"
+      ],
+      "latency_us": 696.3
+    },
+    {
+      "file": "benign/benign-08.md",
+      "label": "benign",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "shell.pipe_to_shell"
+      ],
+      "latency_us": 833.7
+    },
+    {
+      "file": "benign/benign-09.md",
+      "label": "benign",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "url.suspicious"
+      ],
+      "latency_us": 673.9
+    },
+    {
+      "file": "benign/benign-10.md",
+      "label": "benign",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "url.suspicious"
+      ],
+      "latency_us": 650.3
+    },
+    {
+      "file": "benign/benign-11.json",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 846.2
+    },
+    {
+      "file": "benign/benign-12.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 474.3
+    },
+    {
+      "file": "benign/benign-13.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 528.9
+    },
+    {
+      "file": "benign/benign-14.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 513.6
+    },
+    {
+      "file": "benign/benign-15.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 606.5
+    },
+    {
+      "file": "benign/benign-16.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 481.3
+    },
+    {
+      "file": "benign/benign-17.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 448.9
+    },
+    {
+      "file": "benign/benign-18.md",
+      "label": "benign",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.exfiltration"
+      ],
+      "latency_us": 546.3
+    },
+    {
+      "file": "benign/benign-19.md",
+      "label": "benign",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.trigger"
+      ],
+      "latency_us": 448.6
+    },
+    {
+      "file": "benign/benign-20.md",
+      "label": "benign",
+      "max_severity": "high",
+      "max_severity_level": 3,
+      "rules": [
+        "credential.url_password"
+      ],
+      "latency_us": 1113.4
+    },
+    {
+      "file": "benign/benign-21.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 363.9
+    },
+    {
+      "file": "benign/benign-22.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 492.5
+    },
+    {
+      "file": "benign/benign-23.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 592.2
+    },
+    {
+      "file": "benign/benign-24.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 454.6
+    },
+    {
+      "file": "benign/benign-25.md",
+      "label": "benign",
+      "max_severity": "critical",
+      "max_severity_level": 4,
+      "rules": [
+        "instruction.relax",
+        "shell.pipe_to_shell",
+        "url.suspicious"
+      ],
+      "latency_us": 799.7
+    },
+    {
+      "file": "benign/benign-26.md",
+      "label": "benign",
+      "max_severity": "medium",
+      "max_severity_level": 2,
+      "rules": [
+        "instruction.trigger"
+      ],
+      "latency_us": 455.0
+    },
+    {
+      "file": "benign/benign-27.jsonl",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 1254.3
+    },
+    {
+      "file": "benign/benign-28.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 265.8
+    },
+    {
+      "file": "benign/benign-29.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 402.9
+    },
+    {
+      "file": "benign/benign-30.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 1557.9
+    },
+    {
+      "file": "benign/benign-31.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 616.4
+    },
+    {
+      "file": "benign/benign-32.md",
+      "label": "benign",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 604.5
+    },
+    {
+      "file": "hosts/host-0.md",
+      "label": "host",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 341.2
+    },
+    {
+      "file": "hosts/host-1.md",
+      "label": "host",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 289.7
+    },
+    {
+      "file": "hosts/host-2.md",
+      "label": "host",
+      "max_severity": null,
+      "max_severity_level": -1,
+      "rules": [],
+      "latency_us": 165.4
+    }
+  ]
+}

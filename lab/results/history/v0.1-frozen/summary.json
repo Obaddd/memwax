@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "memwax_version": "0.1.0",
+    "amg_version": "0.4.0",
+    "memwax_env": {
+      "python": "3.13.0",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "amg_env": {
+      "python": "3.13.0",
+      "platform": "Windows-11-10.0.26200-SP0"
+    }
+  },
+  "tools": {
+    "memwax (>= medium)": {
+      "detected": 49,
+      "attacks": 64,
+      "detection_rate": 0.765625,
+      "false_positives": 9,
+      "benign": 32,
+      "false_positive_rate": 0.28125,
+      "hosts_flagged": 0,
+      "per_category": {
+        "direct": {
+          "detected": 12,
+          "total": 16
+        },
+        "delayed": {
+          "detected": 10,
+          "total": 16
+        },
+        "hidden": {
+          "detected": 16,
+          "total": 16
+        },
+        "in_document": {
+          "detected": 11,
+          "total": 16
+        }
+      },
+      "median_latency_us": 579.9
+    },
+    "memwax (>= high)": {
+      "detected": 37,
+      "attacks": 64,
+      "detection_rate": 0.578125,
+      "false_positives": 5,
+      "benign": 32,
+      "false_positive_rate": 0.15625,
+      "hosts_flagged": 0,
+      "per_category": {
+        "direct": {
+          "detected": 10,
+          "total": 16
+        },
+        "delayed": {
+          "detected": 5,
+          "total": 16
+        },
+        "hidden": {
+          "detected": 13,
+          "total": 16
+        },
+        "in_document": {
+          "detected": 9,
+          "total": 16
+        }
+      },
+      "median_latency_us": 579.9
+    },
+    "AMG scan()": {
+      "detected": 4,
+      "attacks": 64,
+      "detection_rate": 0.0625,
+      "false_positives": 1,
+      "benign": 32,
+      "false_positive_rate": 0.03125,
+      "hosts_flagged": 0,
+      "per_category": {
+        "direct": {
+          "detected": 2,
+          "total": 16
+        },
+        "delayed": {
+          "detected": 0,
+          "total": 16
+        },
+        "hidden": {
+          "detected": 1,
+          "total": 16
+        },
+        "in_document": {
+          "detected": 1,
+          "total": 16
+        }
+      },
+      "median_latency_us": 68.0
+    },
+    "AMG strict": {
+      "detected": 4,
+      "attacks": 64,
+      "detection_rate": 0.0625,
+      "false_positives": 1,
+      "benign": 32,
+      "false_positive_rate": 0.03125,
+      "hosts_flagged": 0,
+      "per_category": {
+        "direct": {
+          "detected": 2,
+          "total": 16
+        },
+        "delayed": {
+          "detected": 0,
+          "total": 16
+        },
+        "hidden": {
+          "detected": 1,
+          "total": 16
+        },
+        "in_document": {
+          "detected": 1,
+          "total": 16
+        }
+      },
+      "median_latency_us": 110.2
+    },
+    "AMG hardened": {
+      "detected": 4,
+      "attacks": 64,
+      "detection_rate": 0.0625,
+      "false_positives": 1,
+      "benign": 32,
+      "false_positive_rate": 0.03125,
+      "hosts_flagged": 0,
+      "per_category": {
+        "direct": {
+          "detected": 2,
+          "total": 16
+        },
+        "delayed": {
+          "detected": 0,
+          "total": 16
+        },
+        "hidden": {
+          "detected": 1,
+          "total": 16
+        },
+        "in_document": {
+          "detected": 1,
+          "total": 16
+        }
+      },
+      "median_latency_us": 114.2
+    }
+  }
+}

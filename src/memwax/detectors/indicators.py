@@ -185,6 +185,11 @@ PLACEHOLDER_RE = re.compile(
 )
 
 
+def _url_password_is_placeholder(url: str) -> bool:
+    password = url.split("://", 1)[-1].split("@", 1)[0].split(":", 1)[-1]
+    return bool(PLACEHOLDER_RE.match(password)) or password.startswith(("${", "$", "<", "%"))
+
+
 def shannon_entropy(value: str) -> float:
     if not value:
         return 0.0
@@ -298,6 +303,10 @@ class IndicatorDetector:
         for rule, label, pattern in CREDENTIAL_RULES:
             for match in pattern.finditer(doc.text):
                 covered.add((match.start(), match.end()))
+                if rule == "credential.url_password" and _url_password_is_placeholder(
+                    match.group(0)
+                ):
+                    continue
                 line, col = doc.position(match.start())
                 findings.append(
                     Finding(

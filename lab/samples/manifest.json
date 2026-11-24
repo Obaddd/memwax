@@ -1,0 +1,550 @@
+{
+  "attack": [
+    {
+      "file": "attack/direct/direct-01.md",
+      "id": "direct-01",
+      "category": "direct",
+      "technique": "classic override"
+    },
+    {
+      "file": "attack/direct/direct-02.md",
+      "id": "direct-02",
+      "category": "direct",
+      "technique": "secret exfil to webhook"
+    },
+    {
+      "file": "attack/direct/direct-03.md",
+      "id": "direct-03",
+      "category": "direct",
+      "technique": "authority claim"
+    },
+    {
+      "file": "attack/direct/direct-04.md",
+      "id": "direct-04",
+      "category": "direct",
+      "technique": "role change"
+    },
+    {
+      "file": "attack/direct/direct-05.md",
+      "id": "direct-05",
+      "category": "direct",
+      "technique": "pipe to shell"
+    },
+    {
+      "file": "attack/direct/direct-06.md",
+      "id": "direct-06",
+      "category": "direct",
+      "technique": "secrecy"
+    },
+    {
+      "file": "attack/direct/direct-07.md",
+      "id": "direct-07",
+      "category": "direct",
+      "technique": "ssh key persistence"
+    },
+    {
+      "file": "attack/direct/direct-08.md",
+      "id": "direct-08",
+      "category": "direct",
+      "technique": "relax controls"
+    },
+    {
+      "file": "attack/direct/direct-09.md",
+      "id": "direct-09",
+      "category": "direct",
+      "technique": "reverse shell"
+    },
+    {
+      "file": "attack/direct/direct-10.md",
+      "id": "direct-10",
+      "category": "direct",
+      "technique": "read credentials"
+    },
+    {
+      "file": "attack/direct/direct-11.md",
+      "id": "direct-11",
+      "category": "direct",
+      "technique": "polite paraphrase override"
+    },
+    {
+      "file": "attack/direct/direct-12.md",
+      "id": "direct-12",
+      "category": "direct",
+      "technique": "dependency swap"
+    },
+    {
+      "file": "attack/direct/direct-13.md",
+      "id": "direct-13",
+      "category": "direct",
+      "technique": "admin mode"
+    },
+    {
+      "file": "attack/direct/direct-14.md",
+      "id": "direct-14",
+      "category": "direct",
+      "technique": "data exfil via commit"
+    },
+    {
+      "file": "attack/direct/direct-15.md",
+      "id": "direct-15",
+      "category": "direct",
+      "technique": "encoded powershell"
+    },
+    {
+      "file": "attack/direct/direct-16.md",
+      "id": "direct-16",
+      "category": "direct",
+      "technique": "plain malicious preference"
+    },
+    {
+      "file": "attack/delayed/delayed-01.md",
+      "id": "delayed-01",
+      "category": "delayed",
+      "technique": "trigger word"
+    },
+    {
+      "file": "attack/delayed/delayed-02.md",
+      "id": "delayed-02",
+      "category": "delayed",
+      "technique": "session count"
+    },
+    {
+      "file": "attack/delayed/delayed-03.md",
+      "id": "delayed-03",
+      "category": "delayed",
+      "technique": "from now on + secrecy"
+    },
+    {
+      "file": "attack/delayed/delayed-04.md",
+      "id": "delayed-04",
+      "category": "delayed",
+      "technique": "date trigger"
+    },
+    {
+      "file": "attack/delayed/delayed-05.md",
+      "id": "delayed-05",
+      "category": "delayed",
+      "technique": "future sessions exfil"
+    },
+    {
+      "file": "attack/delayed/delayed-06.md",
+      "id": "delayed-06",
+      "category": "delayed",
+      "technique": "conditional on question"
+    },
+    {
+      "file": "attack/delayed/delayed-07.md",
+      "id": "delayed-07",
+      "category": "delayed",
+      "technique": "keyword activation"
+    },
+    {
+      "file": "attack/delayed/delayed-08.md",
+      "id": "delayed-08",
+      "category": "delayed",
+      "technique": "next time"
+    },
+    {
+      "file": "attack/delayed/delayed-09.md",
+      "id": "delayed-09",
+      "category": "delayed",
+      "technique": "persistent quiet change"
+    },
+    {
+      "file": "attack/delayed/delayed-10.md",
+      "id": "delayed-10",
+      "category": "delayed",
+      "technique": "soft paraphrase"
+    },
+    {
+      "file": "attack/delayed/delayed-11.md",
+      "id": "delayed-11",
+      "category": "delayed",
+      "technique": "dormant rule"
+    },
+    {
+      "file": "attack/delayed/delayed-12.md",
+      "id": "delayed-12",
+      "category": "delayed",
+      "technique": "after days"
+    },
+    {
+      "file": "attack/delayed/delayed-13.md",
+      "id": "delayed-13",
+      "category": "delayed",
+      "technique": "self-propagation"
+    },
+    {
+      "file": "attack/delayed/delayed-14.md",
+      "id": "delayed-14",
+      "category": "delayed",
+      "technique": "trigger on file"
+    },
+    {
+      "file": "attack/delayed/delayed-15.md",
+      "id": "delayed-15",
+      "category": "delayed",
+      "technique": "ambiguous future"
+    },
+    {
+      "file": "attack/delayed/delayed-16.md",
+      "id": "delayed-16",
+      "category": "delayed",
+      "technique": "on mention"
+    },
+    {
+      "file": "attack/hidden/hidden-01.md",
+      "id": "hidden-01",
+      "category": "hidden",
+      "technique": "tag smuggling"
+    },
+    {
+      "file": "attack/hidden/hidden-02.md",
+      "id": "hidden-02",
+      "category": "hidden",
+      "technique": "zero-width split phrase"
+    },
+    {
+      "file": "attack/hidden/hidden-03.md",
+      "id": "hidden-03",
+      "category": "hidden",
+      "technique": "bidi reorder"
+    },
+    {
+      "file": "attack/hidden/hidden-04.md",
+      "id": "hidden-04",
+      "category": "hidden",
+      "technique": "homoglyph keyword"
+    },
+    {
+      "file": "attack/hidden/hidden-05.md",
+      "id": "hidden-05",
+      "category": "hidden",
+      "technique": "tag smuggling only"
+    },
+    {
+      "file": "attack/hidden/hidden-06.md",
+      "id": "hidden-06",
+      "category": "hidden",
+      "technique": "zero-width in command"
+    },
+    {
+      "file": "attack/hidden/hidden-07.md",
+      "id": "hidden-07",
+      "category": "hidden",
+      "technique": "mixed-script domain"
+    },
+    {
+      "file": "attack/hidden/hidden-08.md",
+      "id": "hidden-08",
+      "category": "hidden",
+      "technique": "bidi isolate trojan source"
+    },
+    {
+      "file": "attack/hidden/hidden-09.md",
+      "id": "hidden-09",
+      "category": "hidden",
+      "technique": "word joiners"
+    },
+    {
+      "file": "attack/hidden/hidden-10.md",
+      "id": "hidden-10",
+      "category": "hidden",
+      "technique": "soft hyphen"
+    },
+    {
+      "file": "attack/hidden/hidden-11.md",
+      "id": "hidden-11",
+      "category": "hidden",
+      "technique": "homoglyph secrecy"
+    },
+    {
+      "file": "attack/hidden/hidden-12.md",
+      "id": "hidden-12",
+      "category": "hidden",
+      "technique": "tag smuggling multi-line"
+    },
+    {
+      "file": "attack/hidden/hidden-13.md",
+      "id": "hidden-13",
+      "category": "hidden",
+      "technique": "zwnj padding"
+    },
+    {
+      "file": "attack/hidden/hidden-14.md",
+      "id": "hidden-14",
+      "category": "hidden",
+      "technique": "homoglyph password word"
+    },
+    {
+      "file": "attack/hidden/hidden-15.md",
+      "id": "hidden-15",
+      "category": "hidden",
+      "technique": "rtl mark in path"
+    },
+    {
+      "file": "attack/hidden/hidden-16.md",
+      "id": "hidden-16",
+      "category": "hidden",
+      "technique": "invisible separator"
+    },
+    {
+      "file": "attack/in_document/doc-01.md",
+      "id": "doc-01",
+      "category": "in_document",
+      "technique": "fetched README"
+    },
+    {
+      "file": "attack/in_document/doc-02.md",
+      "id": "doc-02",
+      "category": "in_document",
+      "technique": "issue comment"
+    },
+    {
+      "file": "attack/in_document/doc-03.md",
+      "id": "doc-03",
+      "category": "in_document",
+      "technique": "meeting notes"
+    },
+    {
+      "file": "attack/in_document/doc-04.md",
+      "id": "doc-04",
+      "category": "in_document",
+      "technique": "web page summary"
+    },
+    {
+      "file": "attack/in_document/doc-05.md",
+      "id": "doc-05",
+      "category": "in_document",
+      "technique": "PDF extract"
+    },
+    {
+      "file": "attack/in_document/doc-06.md",
+      "id": "doc-06",
+      "category": "in_document",
+      "technique": "dependency changelog"
+    },
+    {
+      "file": "attack/in_document/doc-07.md",
+      "id": "doc-07",
+      "category": "in_document",
+      "technique": "email summary"
+    },
+    {
+      "file": "attack/in_document/doc-08.md",
+      "id": "doc-08",
+      "category": "in_document",
+      "technique": "code comment"
+    },
+    {
+      "file": "attack/in_document/doc-09.md",
+      "id": "doc-09",
+      "category": "in_document",
+      "technique": "stack overflow answer"
+    },
+    {
+      "file": "attack/in_document/doc-10.md",
+      "id": "doc-10",
+      "category": "in_document",
+      "technique": "tool output"
+    },
+    {
+      "file": "attack/in_document/doc-11.md",
+      "id": "doc-11",
+      "category": "in_document",
+      "technique": "wiki page"
+    },
+    {
+      "file": "attack/in_document/doc-12.md",
+      "id": "doc-12",
+      "category": "in_document",
+      "technique": "pull request description"
+    },
+    {
+      "file": "attack/in_document/doc-13.md",
+      "id": "doc-13",
+      "category": "in_document",
+      "technique": "subtle doc advice"
+    },
+    {
+      "file": "attack/in_document/doc-14.md",
+      "id": "doc-14",
+      "category": "in_document",
+      "technique": "translated doc"
+    },
+    {
+      "file": "attack/in_document/doc-15.md",
+      "id": "doc-15",
+      "category": "in_document",
+      "technique": "calendar invite"
+    },
+    {
+      "file": "attack/in_document/doc-16.md",
+      "id": "doc-16",
+      "category": "in_document",
+      "technique": "data URI payload"
+    }
+  ],
+  "benign": [
+    {
+      "file": "benign/benign-01.md",
+      "id": "benign-01",
+      "note": "python project"
+    },
+    {
+      "file": "benign/benign-02.md",
+      "id": "benign-02",
+      "note": "node project"
+    },
+    {
+      "file": "benign/benign-03.md",
+      "id": "benign-03",
+      "note": "go service"
+    },
+    {
+      "file": "benign/benign-04.md",
+      "id": "benign-04",
+      "note": "data science prefs"
+    },
+    {
+      "file": "benign/benign-05.md",
+      "id": "benign-05",
+      "note": "tone preferences"
+    },
+    {
+      "file": "benign/benign-06.md",
+      "id": "benign-06",
+      "note": "persistence wording, benign"
+    },
+    {
+      "file": "benign/benign-07.md",
+      "id": "benign-07",
+      "note": "hard: security team discusses injection strings"
+    },
+    {
+      "file": "benign/benign-08.md",
+      "id": "benign-08",
+      "note": "hard: official rustup installer pipes to sh"
+    },
+    {
+      "file": "benign/benign-09.md",
+      "id": "benign-09",
+      "note": "hard: devops notes with private IPs"
+    },
+    {
+      "file": "benign/benign-10.md",
+      "id": "benign-10",
+      "note": "hard: real link shortener"
+    },
+    {
+      "file": "benign/benign-11.json",
+      "id": "benign-11",
+      "note": "json key-value memory"
+    },
+    {
+      "file": "benign/benign-12.md",
+      "id": "benign-12",
+      "note": "hard: emphatic CLAUDE.md wording"
+    },
+    {
+      "file": "benign/benign-13.md",
+      "id": "benign-13",
+      "note": "non-Latin text"
+    },
+    {
+      "file": "benign/benign-14.md",
+      "id": "benign-14",
+      "note": "emoji with ZWJ"
+    },
+    {
+      "file": "benign/benign-15.md",
+      "id": "benign-15",
+      "note": "hard: legit system prompt work"
+    },
+    {
+      "file": "benign/benign-16.md",
+      "id": "benign-16",
+      "note": "git workflow"
+    },
+    {
+      "file": "benign/benign-17.md",
+      "id": "benign-17",
+      "note": "testing shortcuts"
+    },
+    {
+      "file": "benign/benign-18.md",
+      "id": "benign-18",
+      "note": "hard: secret-handling guidance mentions .env and keys"
+    },
+    {
+      "file": "benign/benign-19.md",
+      "id": "benign-19",
+      "note": "hard: benign trigger phrase"
+    },
+    {
+      "file": "benign/benign-20.md",
+      "id": "benign-20",
+      "note": "connection string with placeholder"
+    },
+    {
+      "file": "benign/benign-21.md",
+      "id": "benign-21",
+      "note": "frontend style guide"
+    },
+    {
+      "file": "benign/benign-22.md",
+      "id": "benign-22",
+      "note": "persona preference"
+    },
+    {
+      "file": "benign/benign-23.md",
+      "id": "benign-23",
+      "note": "windows dev notes"
+    },
+    {
+      "file": "benign/benign-24.md",
+      "id": "benign-24",
+      "note": "docker notes"
+    },
+    {
+      "file": "benign/benign-25.md",
+      "id": "benign-25",
+      "note": "hard: postmortem quotes attacker command"
+    },
+    {
+      "file": "benign/benign-26.md",
+      "id": "benign-26",
+      "note": "hard: dated process change"
+    },
+    {
+      "file": "benign/benign-27.jsonl",
+      "id": "benign-27",
+      "note": "jsonl chat memory"
+    },
+    {
+      "file": "benign/benign-28.md",
+      "id": "benign-28",
+      "note": "markdown TODO comment"
+    },
+    {
+      "file": "benign/benign-29.md",
+      "id": "benign-29",
+      "note": "hard: relaxed confirmation for formatter"
+    },
+    {
+      "file": "benign/benign-30.md",
+      "id": "benign-30",
+      "note": "hashes and ids"
+    },
+    {
+      "file": "benign/benign-31.md",
+      "id": "benign-31",
+      "note": "credential placeholders"
+    },
+    {
+      "file": "benign/benign-32.md",
+      "id": "benign-32",
+      "note": "accessibility notes"
+    }
+  ]
+}

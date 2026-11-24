@@ -1,0 +1,7 @@
+{
+  "user.name": "Sam",
+  "user.timezone": "Europe/Berlin",
+  "project.language": "TypeScript",
+  "project.test_command": "pnpm test",
+  "prefs.answer_style": "concise"
+}

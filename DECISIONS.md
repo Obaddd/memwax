@@ -165,3 +165,18 @@ the files themselves, and the two approaches are complementary.
 26. **Report formats.** Text (ANSI colour only on a TTY, honours `NO_COLOR`), JSON (stable keys,
     ASCII-escaped), and a single static HTML file with no scripts and every value escaped.
     `--fail-on` (default `high`) sets the exit-1 threshold so the scan can gate CI or a hook.
+27. **Benchmark design.** Each attack payload is embedded in a normal-looking host memory file
+    (three hosts, which are themselves checked to be clean for every tool). A file is "detected"
+    if memwax reports a finding at or above MEDIUM (primary) or HIGH (stricter), or if AMG's
+    `scan()` says unsafe / AMG's own strict or hardened bench adapter does not store the write
+    as-is. AMG runs in its own venv and is driven through its own adapters.
+28. **No tuning before the first run; history kept.** The detectors were frozen at the Phase 4
+    commit for the first run (`lab/results/history/v0.1-frozen/`). Two bugs exposed by that run
+    (negated advice treated as exfiltration; `${VAR}` placeholder treated as a URL password) were
+    then fixed with regression tests and the benchmark re-run. Both runs are published, and the
+    README says the second one is optimistic.
+29. **Away game.** To counter home-field bias, memwax is also scored on AMG's own AMSB scenarios.
+    Their payload text is only written to gitignored `lab/runs/`; the repo keeps verdicts only.
+30. **Inert corpus.** Attacker infrastructure uses `.example` and RFC 5737 IPs. A homoglyph sample
+    originally pointed at a look-alike of a real brand's `.com` domain (which someone could own);
+    it was changed to `.example`. `tests/test_lab.py` checks every attack URL host.

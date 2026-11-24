@@ -219,6 +219,23 @@ _COMBO_CATEGORIES = {
 }
 
 
+# "Never paste API keys into chat" is advice *against* the action. For these
+# categories a negation just before the verb, in the same sentence, cancels the match.
+# (Secrecy is not here: "do not tell the user" is itself the attack.)
+_NEGATABLE = {"exfiltration", "relax"}
+_NEGATION = re.compile(
+    r"\b(?:never|not|don'?t|doesn'?t|mustn'?t|shouldn'?t|avoid|no\s+need\s+to\s+ever)\s+"
+    r"(?:\w+\s+){0,2}$",
+    re.IGNORECASE,
+)
+
+
+def _negated(text: str, offset: int) -> bool:
+    window = text[max(0, offset - 40) : offset]
+    sentence = re.split(r"[.!?\n]", window)[-1]
+    return bool(_NEGATION.search(sentence))
+
+
 def _paragraph_index(text: str, offset: int) -> int:
     return len(re.findall(r"\n\s*\n", text[:offset]))
 
@@ -235,6 +252,8 @@ class InstructionDetector:
         by_paragraph: dict[int, list[tuple[Rule, Finding]]] = {}
         for rule in self.rules:
             for match in rule.pattern.finditer(normalized):
+                if rule.category in _NEGATABLE and _negated(normalized, match.start()):
+                    continue
                 start = mapping[match.start()]
                 end = mapping[min(match.end(), len(mapping) - 1)]
                 line, col = doc.position(start)
