@@ -131,3 +131,23 @@ the files themselves, and the two approaches are complementary.
     key, broken or truncated log), 3 = usage error. Lets CI and hooks branch on severity.
 15. **One baseline at a time.** `amber create` replaces the previous baseline; the change log keeps an
     `amber` entry with each baseline's digest, so the history of baselines is still auditable.
+16. **Detector philosophy.** Memory files are full of legitimate instructions, so plain
+    "always"/"never" is never a finding. Detectors look for signals legitimate preferences rarely
+    need (overrides, secrecy, authority claims, identity change, secret movement, relaxed controls,
+    trigger conditions). Persistence markers ("from now on") alone are LOW; two or more categories
+    in one paragraph produce an `instruction.combo` finding one level above the strongest.
+17. **Rules over ML.** Regex rules on normalised text, not a model. They are explainable, fast,
+    offline, and easy to review. The trade-off (paraphrases get through) is measured in Phase 5 and
+    stated in the README.
+18. **Normalisation before matching.** Zero-width/bidi/tag characters are removed and common
+    Cyrillic/Greek look-alikes folded before the instruction and shell rules run, with an offset map
+    so findings still point at the original line and column.
+19. **Credentials are redacted** in every excerpt. Placeholders (`${VAR}`, `<your-key>`, `changeme`)
+    and low-entropy values are ignored.
+20. **URL policy.** A URL is only a finding when it is unusual (raw IP, punycode, shortener,
+    paste/tunnel/webhook service, embedded credentials, data: URI) or, when a baseline exists, its
+    domain is new since the baseline and not on the allowlist (LOW).
+21. **Drift thresholds.** >=50% of lines changed = MEDIUM, >=80% = HIGH; growth >=3x = MEDIUM,
+    >=10x = HIGH; shrinking below 20% = MEDIUM; new file = LOW; files under 200 bytes ignored.
+22. **No non-ASCII in Python sources.** Test fixtures with hidden characters use escapes, enforced by
+    `tests/test_dogfood.py`, so memwax never ships the characters it warns about.
