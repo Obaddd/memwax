@@ -101,3 +101,18 @@ the files themselves, and the two approaches are complementary.
    legal name in `LICENSE` and `pyproject.toml` if preferred.
 5. **Build backend / layout.** hatchling, `src/memwax`, Python >= 3.11. Only runtime dependency is
    `cryptography` (for Ed25519). CLI uses stdlib `argparse` to keep the dependency surface small.
+6. **Polling monitor, not OS events.** `memwax watch` re-hashes every tracked file each interval
+   (default 2 s). It is portable, has no dependency, and cannot miss an event when a watcher buffer
+   overflows. Every file is fully re-hashed each poll (no size/mtime shortcut), so a same-size edit
+   with a restored mtime is still caught.
+7. **The log is the only monitor state.** The last-known hash of each file is rebuilt by replaying
+   `.memwax/log.jsonl`; there is no cache file that could be edited to hide a change.
+8. **Provenance rules.** `MEMWAX_SOURCE` env var (recorded as a *declared* process source) >
+   git author of the last commit, but only when the working-tree file equals HEAD > "unknown".
+   Uncommitted edits are not attributed to the local git user. Only author name and commit id are
+   stored, not email. Removals are always "unknown". Real per-process attribution of file writes
+   needs OS auditing (auditd, ETW, Endpoint Security) and is out of scope.
+9. **Log truncation.** A hash chain cannot detect deletion of its *last* entries. Amber baselines
+   record and sign the log head (seq + hash) to cover that case.
+10. **Default targets.** CLAUDE.md, CLAUDE.local.md, nested CLAUDE.md, `.claude/**/*.md`, AGENTS.md,
+    `memory/**`, `.memory/**`. Overridable with `memwax init --target GLOB`.
